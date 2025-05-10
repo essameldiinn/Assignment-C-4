@@ -128,29 +128,47 @@
         #endregion
 
         #region Q6 
-        class Program
         {
             static void MinMaxArray(int[] arr, ref int min, ref int max)
+        {
+            min = arr[0];
+            max = arr[0];
+            foreach (int num in arr)
             {
-                min = arr[0];
-                max = arr[0];
-                foreach (int num in arr)
-                {
-                    if (num < min) min = num;
-                    if (num > max) max = num;
-                }
+                if (num < min) min = num;
+                if (num > max) max = num;
             }
+        }
 
-            static void Main()
-            {
-                int[] numbers = { 5, 1, 9, 3, 7 };
-                int min = 0, max = 0;
-                MinMaxArray(numbers, ref min, ref max);
-                Console.WriteLine($"Min: {min}, Max: {max}");
-            }
-        } 
-        #endregion
-
-
+        static void Main()
+        {
+            int[] numbers = { 5, 1, 9, 3, 7 };
+            int min = 0, max = 0;
+            MinMaxArray(numbers, ref min, ref max);
+            Console.WriteLine($"Min: {min}, Max: {max}");
+        }
     }
+    #endregion
+
+        #region Q7 
+    class Program
+    {
+        static long Factorial(int number)
+        {
+            long result = 1;
+            for (int i = 2; i <= number; i++)
+            {
+                result *= i;
+            }
+            return result;
+        }
+
+        static void Main()
+        {
+            Console.Write("Enter a number: ");
+            int num = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Factorial of {num} is {Factorial(num)}");
+        }
+    }
+    #endregion
 }
